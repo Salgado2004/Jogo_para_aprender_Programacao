@@ -1,0 +1,111 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.container_principal{
+    position: relative;
+    width: 60%;
+    height: 75%;
+    padding: 10px;
+    border-radius: 5%;
+    border: 2px solid white;
+    background-color: rgb(20, 19, 19);
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.coluna_esquerda{
+    position: relative;
+    float: left;
+    bottom: 0;
+    width: 50%;
+    height: 85%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.coluna_direita{
+    position: relative;
+    float: right;
+    bottom: 0;
+    width: 50%;
+    height: 85%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.coluna_direita::-webkit-scrollbar, .coluna_esquerda::-webkit-scrollbar{
+    width: 5px;
+}
+.coluna_direita::-webkit-scrollbar-track, .coluna_esquerda::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+.coluna_direita::-webkit-scrollbar-thumb, .coluna_esquerda::-webkit-scrollbar-thumb{
+    background-color: aliceblue;
+    border-radius: 20px;
+    border: white;
+}
+
+iframe{
+    outline: none;
+    border: none;
+}
+
+h3{
+    margin: 5px;
+    color: aliceblue;
+    text-align: center;
+}
+
+.dropin {
+    width: 99.5%;
+    height: 20pt;
+    background-color: rgb(82, 82, 82);
+    border: 1px solid #aaaaaa;
+}
+
+.codeblock{
+    font-size: 15pt;
+    margin: 10px;
+    border-radius: 10%;
+    color: aliceblue;
+    cursor: grab;
+    background-color: rgb(82, 82, 82);
+}
+
+input{
+    outline: none;
+    border: none;
+    color: white;
+    background: transparent;
+}
+input:focus::placeholder{
+    color: white;
+}
+button{
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: large;
+    border: 1px solid #aaaaaa;
+    background: linear-gradient(to bottom right, black, rgb(82, 82, 82));
+}
+
+#novo{
+    cursor: pointer;
+    color: white;
+    font-size: 15pt;
+}
