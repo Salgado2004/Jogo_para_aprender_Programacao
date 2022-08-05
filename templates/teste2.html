@@ -1,14 +1,6 @@
-<html lang="pt-br" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        
-        <title>Teste com dragging</title>
-        <link rel="stylesheet" href="../static/estiloTeste.css" />
-        <script type="text/javascript" src="../static/script.js"></script>
-    </head>
-    <body>
-      <div class="container_principal">
+{% extends base.html %}
+
+{% block content %}
           <h3>Missão 1: Crie um programa para que exiba uma mensagem se houver as 10 frutas e, se não houver, exiba outra mensagem</h3>
           <div class="coluna_esquerda">
             <form method="post" action="/resultado" target="_blank">
@@ -44,6 +36,4 @@
                 else:<br>
               </code><br>
           </div>
-      </div>
-    </body>
-</html>
+{% endblock %}
