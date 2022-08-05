@@ -8,11 +8,11 @@ app = Flask(__name__)
 @app.route('/resultado', methods=['POST'])
 def resultado() -> 'html':
     ordem = [
-        {'index': int(request.form['condicionalIf']), 'valor': 'if('+request.form['condicaoIf']+'):\n'},
-        {'index': int(request.form['print1']), 'valor': '   print('+request.form['texto1']+')\n'},
-        {'index': int(request.form['print2']), 'valor': '   print('+request.form['texto2']+')\n'},
-        {'index': int(request.form['variavel']), 'valor': "qtdFrutas = 10\n"},
-        {'index': int(request.form['condicionalElse']), 'valor': "else:\n"}
+        {'index': int(request.form['condicionalIf2']), 'valor': 'if('+request.form['condicaoIf2']+'):\n'},
+        {'index': int(request.form['print10']), 'valor': '   print('+request.form['texto10']+')\n'},
+        {'index': int(request.form['print1012']), 'valor': '   print('+request.form['texto1012']+')\n'},
+        {'index': int(request.form['variavel1']), 'valor': "qtdFrutas = 10\n"},
+        {'index': int(request.form['condicionalElse11']), 'valor': "else:\n"}
     ]
     ordem.sort(key=ordena)
     arquivoCodigo = open("codigoMissao1.py", "w")
