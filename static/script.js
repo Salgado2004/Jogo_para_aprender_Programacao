@@ -10,11 +10,14 @@ function allowDrop(ev) {
     ev.preventDefault();
     ordem = valor;
     var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-    var verifica =document.getElementById(data).children;
+    var elemento = document.getElementById(data).cloneNode(true);
+    ev.target.appendChild(elemento);
+    var verifica = elemento.children;
     for (var i=0; verifica[i]; i++) {
-        var classe = verifica[i].getAttribute('hidden');
-        if(classe != null){ 
+        var nome = verifica[i].getAttribute('name');
+        verifica[i].setAttribute('name', nome+ordem);
+        var esconde = verifica[i].getAttribute('hidden');
+        if(esconde != null){ 
             verifica[i].setAttribute('value', ordem);
         }
     }
