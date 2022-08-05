@@ -63,18 +63,40 @@ h3{
     color: aliceblue;
     text-align: center;
 }
+h4{
+    margin: 5px;
+    color: aliceblue;
+}
 
 .dropin {
     width: 99.5%;
-    height: 20pt;
+    height: 25pt;
     background-color: rgb(82, 82, 82);
     border: 1px solid #aaaaaa;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+summary{
+    font-size: 16pt;
+    padding: 5px;
+    color: aliceblue;
+    cursor: pointer;
+    background-color: rgb(82, 82, 82);
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #aaaaaa;
+}
+summary:hover, summary:focus{
+    font-weight: bold;
 }
 
 .codeblock{
     font-size: 15pt;
     margin: 10px;
-    border-radius: 10%;
+    padding: 3pt;
+    border-radius: 10px;
     color: aliceblue;
     cursor: grab;
     background-color: rgb(82, 82, 82);
