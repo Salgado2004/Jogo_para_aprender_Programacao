@@ -1,0 +1,73 @@
+{% block codigos %}
+    <h4>Blocos de código</h4>
+    <details id="Entradas">
+        <summary>Entradas</summary><br>
+        <code class="codeblock" id="in1"draggable="true" ondragstart="drag(event)">
+            <input class="ordem" type="text" name="variavel" hidden>
+            qtdFrutas = 10<br>
+        </code><br>
+    </details>
+    <details id="Saidas">
+        <summary>Saídas</summary><br>
+        <code class="codeblock" id="out1"draggable="true" ondragstart="drag(event)">
+            <input class="ordem" type="text" name="print" hidden>
+            &nbsp;print(<input type="text" name="texto" >)<br>
+        </code><br>
+    </details>
+    <details id="Condições">
+        <summary>Condições</summary><br>
+        <code class="codeblock" id="cd1" draggable="true" ondragstart="drag(event)">
+            <input class="ordem" type="text" name="condicionalIf" hidden>
+            if(<input type="text" name="condicaoIf" >):<br>
+        </code><br>
+        <code class="codeblock" id="cd2"draggable="true" ondragstart="drag(event)">
+            <input class="ordem" type="text" name="condicionalElse" hidden>
+            else:<br>
+        </code><br>
+        <code class="codeblock" id="cd3" draggable="true" ondragstart="drag(event)">
+            <input class="ordem" type="text" name="condicionalIf" hidden>
+            elif(<input type="text" name="condicaoIf" >):<br>
+        </code><br>
+    </details>
+    <details id="Repetições">
+        <summary>Repetições</summary><br>
+        <code class="codeblock" id="loop1" draggable="true" ondragstart="drag(event)">
+            <input class="ordem" type="text" name="loopWhile" hidden>
+            while(<input type="text" name="repWhile" >):<br>
+        </code><br>
+        <code class="codeblock" id="loop2" draggable="true" ondragstart="drag(event)">
+            <input class="ordem" type="text" name="loopFor" hidden>
+            for(<input type="text" name="repFor" >):<br>
+        </code><br>
+    </details>
+    <details id="Coleções">
+        <summary>Coleções</summary><br>
+        <code class="codeblock" id="array1" draggable="true" ondragstart="drag(event)">
+            <input class="ordem" type="text" name="colecaoList" hidden>
+            lista = [<input type="text" name="arrayList" >]<br>
+        </code><br>
+        <code class="codeblock" id="array2" draggable="true" ondragstart="drag(event)">
+            <input class="ordem" type="text" name="colecaoTuple" hidden>
+            tupla = (<input type="text" name="arrayTuple" >)<br>
+        </code><br>
+        <code class="codeblock" id="array3" draggable="true" ondragstart="drag(event)">
+            <input class="ordem" type="text" name="colecaoSet" hidden>
+            conjunto = {<input type="text" name="arraySet" >}<br>
+        </code><br>
+        <code class="codeblock" id="array4" draggable="true" ondragstart="drag(event)">
+            <input class="ordem" type="text" name="colecaoDictionary" hidden>
+            dicionario = {<input type="text" name="arrayDictionary" value="'Chave': ">}<br>
+        </code><br>
+    </details>
+    <details id="Funções">
+        <summary>Funções</summary><br>
+        <code class="codeblock" id="func1" draggable="true" ondragstart="drag(event)">
+            <input class="ordem" type="text" name="funcCreator" hidden>
+            def <input type="text" name="funName" value="minhaFunc" style="width: 85px;" autofocus >(<input type="text" name="parametro" style="width: 30px;">) <br>
+        </code><br>
+        <code class="codeblock" id="func2" draggable="true" ondragstart="drag(event)">
+            <input class="ordem" type="text" name="funcCall" hidden>
+            <input type="text" name="funCall" value="minhaFunc" style="width: 85px;" autofocus="true" >(<input type="text" name="parametro" style="width: 30px;">)<br>
+        </code><br>
+    </details>
+{% endblock %}
