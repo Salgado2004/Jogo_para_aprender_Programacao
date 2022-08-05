@@ -3,37 +3,23 @@
 {% block content %}
           <h3>Missão 1: Crie um programa para que exiba uma mensagem se houver as 10 frutas e, se não houver, exiba outra mensagem</h3>
           <div class="coluna_esquerda">
+            <h4>Área de código</h4>
             <form method="post" action="/resultado" target="_blank">
               <div id="areaBlocos">
                 <div class="dropin" id="div1" ondrop="drop(event, 1)" ondragover="allowDrop(event)"></div>
                 <div class="dropin" id="div2" ondrop="drop(event, 2)" ondragover="allowDrop(event)"></div>
               </div>
-              <div class="dropin" id="Novo" onclick="NovaDiv()"><p>Novo + </p></div>
+              <div class="dropin" id="Novo" onclick="NovaDiv()"><p>&nbsp;Novo <b>+</b> </p></div>
               <br>
               <button type="submit">Ok!</button>
               <button type="reset">Reset</button>
             </form>
           </div>
           <div class="coluna_direita" ondrop="drop(event, 0)" ondragover="allowDrop(event, 0)">
-              <code class="codeblock" id="cd1" draggable="true" ondragstart="drag(event)">
-                <input class="ordem" type="text" name="condicionalIf" hidden>
-                if(<input type="text" name="condicaoIf" >):<br>
-              </code><br>
-              <code class="codeblock" id="cd2"draggable="true" ondragstart="drag(event)">
-                <input class="ordem" type="text" name="print1" hidden>
-                &nbsp;print(<input type="text" name="texto1" >)<br>
-              </code><br>
-              <code class="codeblock" id="cd3"draggable="true" ondragstart="drag(event)">
-                <input class="ordem" type="text" name="print2" hidden>
-                &nbsp;print(<input type="text" name="texto2" >)<br>
-              </code><br>
-              <code class="codeblock" id="cd4"draggable="true" ondragstart="drag(event)">
-                <input class="ordem" type="text" name="variavel" hidden>
-                qtdFrutas = 10<br>
-              </code><br>
-              <code class="codeblock" id="cd5"draggable="true" ondragstart="drag(event)">
-                <input class="ordem" type="text" name="condicionalElse" hidden>
-                else:<br>
-              </code><br>
+            {% include 'codeBlocks.html' %}
+            {% block codigos %}
+    
+            {% endblock %}
+                    
           </div>
 {% endblock %}
