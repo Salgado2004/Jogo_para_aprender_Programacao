@@ -8,11 +8,11 @@ app = Flask(__name__)
 @app.route('/resultado', methods=['POST'])
 def resultado() -> 'html':
     ordem = [
-        {'index': int(request.form['condicionalIf2']), 'valor': 'if('+request.form['condicaoIf2']+'):\n'},
-        {'index': int(request.form['print10']), 'valor': '   print('+request.form['texto10']+')\n'},
-        {'index': int(request.form['print1012']), 'valor': '   print('+request.form['texto1012']+')\n'},
-        {'index': int(request.form['variavel1']), 'valor': "qtdFrutas = 10\n"},
-        {'index': int(request.form['condicionalElse11']), 'valor': "else:\n"}
+        {'index': int(request.form['condicionalIf.2']), 'valor': 'if('+request.form['condicaoIf.2']+'):\n'},
+        {'index': int(request.form['print.10']), 'valor': '   print('+request.form['texto.10']+')\n'},
+        {'index': int(request.form['print.12']), 'valor': '   print('+request.form['texto.12']+')\n'},
+        {'index': int(request.form['variavel.1']), 'valor': "qtdFrutas = 10\n"},
+        {'index': int(request.form['condicionalElse.11']), 'valor': "else:\n"}
     ]
     ordem.sort(key=ordena)
     arquivoCodigo = open("codigoMissao1.py", "w")
