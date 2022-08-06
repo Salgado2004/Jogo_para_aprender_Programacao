@@ -100,7 +100,19 @@ summary:hover, summary:focus{
     color: aliceblue;
     cursor: grab;
     background-color: rgb(82, 82, 82);
+    display: flex;
+    flex-direction: row;
+    justify-items: space-between;
 }
+.codeblock img{
+    visibility: hidden;
+    filter: invert(100%);
+    cursor: pointer;
+}
+.codeblock:hover img{
+    visibility: visible;
+}
+
 
 input{
     outline: none;
