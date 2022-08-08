@@ -23,7 +23,15 @@ def resultado() -> 'html':
 def ordena(e):
   return e['index']
 
-@app.route('/teste2')
+@app.errorhandler(404)
+def erro404(error):
+    return render_template('erro404.html'), 404
+
+@app.errorhandler(400)
+def erro404(error):
+    return render_template('erro400.html'), 400
+
+@app.route('/missao1')
 def entry_page() -> 'html':
     return render_template('teste2.html')
 
