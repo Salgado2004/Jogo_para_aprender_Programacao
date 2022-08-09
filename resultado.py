@@ -35,11 +35,11 @@ def erro404(error):
 def entry_page() -> 'html':
     return render_template('index.html')
 
-@app.route('/home')
+@app.route('/home', methods=['POST'])
 def home_page() -> 'html':
     if 'username' in session:
         nome = (session['username'])
-    elif:
+    else:
         noLogin = request.form['noLogin']
         if noLogin == "noLogin":
             nome = "Sem nome de usuário"
