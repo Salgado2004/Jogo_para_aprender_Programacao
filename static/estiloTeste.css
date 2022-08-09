@@ -58,6 +58,13 @@ iframe{
     border: none;
 }
 
+h2{
+    font-size: 30pt;
+    color: aliceblue;
+    text-transform: uppercase;
+    text-align: center;
+}
+
 h3{
     margin: 5px;
     color: aliceblue;
@@ -112,7 +119,6 @@ summary:hover, summary:focus{
 .codeblock:hover img{
     visibility: visible;
 }
-
 
 input{
     outline: none;
