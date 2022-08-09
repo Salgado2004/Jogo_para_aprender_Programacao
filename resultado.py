@@ -31,8 +31,12 @@ def erro404(error):
 def erro404(error):
     return render_template('erro400.html'), 400
 
-@app.route('/missao1')
+@app.route('/')
 def entry_page() -> 'html':
+    return render_template('index.html')
+
+@app.route('/missao1')
+def mission1_page() -> 'html':
     return render_template('teste2.html')
 
 if __name__ == '__main__':
