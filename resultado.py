@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session, redirect, url_for
 
 app = Flask(__name__)
 
@@ -34,6 +34,18 @@ def erro404(error):
 @app.route('/')
 def entry_page() -> 'html':
     return render_template('index.html')
+
+@app.route('/home')
+def home_page() -> 'html':
+    if 'username' in session:
+        nome = (session['username'])
+    elif:
+        noLogin = request.form['noLogin']
+        if noLogin == "noLogin":
+            nome = "Sem nome de usuário"
+        else:
+            return redirect(url_for('entry_page'))
+    return render_template('home.html')
 
 @app.route('/missao1')
 def mission1_page() -> 'html':

@@ -3,16 +3,17 @@
 {% block content %}
 <br><br><br><br><br><br><br>
 <h2 style="font-size: 30pt; color: aliceblue; text-transform: uppercase; text-align: center;">Login</h2>
-<form action="../index.php" method="post" autocomplete="off">
+<form action="/login" method="post" autocomplete="off">
     <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <input style="margin: 10px; border: solid 1px rgb(82, 82, 82); border-radius: 20px; width: 200px; padding: 10px;" type="email" name="logemail" class="loginForm" placeholder="Email" id="logemail">
         <input style="margin: 10px; border: solid 1px rgb(82, 82, 82); border-radius: 20px; width: 200px; padding: 10px;" type="password" name="logsenha" class="loginForm" placeholder="Senha" id="logpass">
+        <input type="text" name="noLogin" class="loginForm" id="noLogin" value="Login" hidden>
         <button type="submit" class="loginPage" style="width: 200px; margin: 5px; padding: 5px;">Entrar</button>
     </div>
     <a href="/cadastro" style="position: relative; color: aliceblue; text-align: center;">Não tem login? Faça aqui</a>
 </form>
 <h2 style="font-size: 30pt; color: aliceblue; text-transform: uppercase; text-align: center;">Ou</h2>
-<form action="../index.php" method="post" autocomplete="off">
+<form action="/home" method="post" autocomplete="off">
     <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <input type="text" name="noLogin" class="loginForm" id="noLogin" value="noLogin" hidden>
         <button type="submit" class="loginPage" style="width: 200px; margin: 5px; padding: 5px;">Continuar sem Login</button>
