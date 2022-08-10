@@ -1,6 +1,6 @@
 import mysql.connector
 
-dbconfig = {'host': '127.0.0.1', 'user': 'root', 'password': 'laura2312', 'database': 'mycodinggamedb'}
+dbconfig = {'host': '127.0.0.1', 'user': 'root', 'password': 'password', 'database': 'mycodinggamedb'}
 
 def log(email, senha):
     logmail = email
