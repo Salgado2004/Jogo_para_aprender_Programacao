@@ -1,5 +1,6 @@
 {% block codigos %}
     <h4>Blocos de código</h4>
+    {% if the_nivel > 1 %}
     <details id="Entradas">
         <summary>Entradas</summary><br>
         <code class="codeblock" id="in"draggable="true" alt="template" ondragstart="drag(event)">
@@ -7,6 +8,7 @@
             qtdFrutas = 10<br>
         </code><br>
     </details>
+    {% endif%}
     <details id="Saidas">
         <summary>Saídas</summary><br>
         <code class="codeblock" id="out"draggable="true" alt="template" ondragstart="drag(event)">
