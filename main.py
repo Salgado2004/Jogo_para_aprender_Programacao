@@ -50,21 +50,38 @@ def home_page() -> 'html':
     noLogin = request.form['noLogin']
     if noLogin == "Login":
         nome = (session['username'])
+        login = "1"
     elif noLogin == "noLogin":
-        nome = "Sem nome de usuário"
+        session.pop('username', None)
+        (session['username']) = "Sem nome de usuário"
+        (session['nivel']) = "1"
+        nivel = (session['nivel'])
+        nome = (session['username'])
+        login = "0"
     else:
         return redirect(url_for('entry_page'))
     return render_template('home.html',
-                            the_nome = nome)
+                            the_nome = nome,
+                            the_nivel = nivel,
+                            the_login = login)
 
 @app.route('/login', methods=['POST'])
 def login() -> 'html':
+    session.pop('username', None)
     nome = str(bd.log(email = request.form['logemail'], senha = request.form['logsenha']))
     (session['username']) = nome
     return home_page()
-@app.route('/missao1')
-def mission1_page() -> 'html':
-    return render_template('teste2.html')
+
+#@app.route('/missao1')
+#def mission1_page() -> 'html':
+#    return render_template('teste2.html')
+
+@app.route('/missoes', methods=['POST'])
+def get_missao() -> 'html':
+    missao =  (session['nivel'])
+    pagMissao = "missao"+missao+".html"
+    return render_template(pagMissao, 
+                            the_nivel = int(missao))
 
 if __name__ == '__main__':
     app.run(debug=True)
