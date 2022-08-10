@@ -4,5 +4,13 @@
 
 <h4>{{ the_nome }}</h4>
 <h2>Bem Vindo!</h2>
+<br><br><br>
+
+{% if the_login == '0' %}
+<h4>Atenção: Ao iniciar o jogo sem um login <b>não será possível salvar seu progresso</b></h4><br>
+{% endif %}
+<form action="/missoes" method="post" style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 10px;">
+    <button type="submit" style="width: 200px; margin: 5px; padding: 5px; font-size: 30pt;">Jogar</button>
+</form>
 
 {% endblock %}
