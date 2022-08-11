@@ -8,23 +8,22 @@ app = Flask(__name__)
 # Set the secret key to some random bytes. Keep this really secret!
 app.secret_key = 'ofjoedjwoedmowid'
 
-@app.route('/resultado', methods=['POST'])
-def resultado() -> 'html':
-    ordem = [
-        {'index': int(request.form['condicionalIf.2']), 'valor': 'if('+request.form['condicaoIf.2']+'):\n'},
-        {'index': int(request.form['print.10']), 'valor': '   print('+request.form['texto.10']+')\n'},
-        {'index': int(request.form['print.12']), 'valor': '   print('+request.form['texto.12']+')\n'},
-        {'index': int(request.form['variavel.1']), 'valor': "qtdFrutas = 10\n"},
-        {'index': int(request.form['condicionalElse.11']), 'valor': "else:\n"}
-    ]
-    ordem.sort(key=ordena)
-    arquivoCodigo = open("codigoMissao1.py", "w")
-    for x in ordem:
-        arquivoCodigo.write(x['valor'])
-    return "o código foi baixado!"
-
-def ordena(e):
-  return e['index']
+@app.route('/verifica', methods=['POST'])
+def verifica() -> 'html':
+    missao = int(request.form['missao'])
+    ordem = [ ]
+    codeblocks = ['var.', 'print.', 'condicaoIf.', 'condicaoElse.', 'condicaoElif.', 'loopWhile.', 'loopFor.', 'arrayList.', 'arrayTuple.', 'arraySet.', 'arrayDictionary.', 'funName.', 'funCall.']
+    for i in range(15):
+        for code in codeblocks:
+            chave = code+str(i)
+            tipo = code.split(".")
+            try:
+                dicionario = {'index': int(request.form["indice."+str(i)]), 'valor': request.form[chave], 'tipo': tipo[0]}
+                ordem.append(dicionario)
+            except KeyError:
+                continue
+    codigo = vm.criaCodigo(ordem)
+    return codigo
 
 @app.errorhandler(404)
 def erro404(error):
