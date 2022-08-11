@@ -18,7 +18,7 @@ function allowDrop(ev) {
       elemento.setAttribute('id', id[0]+"."+ordem);
       elemento.setAttribute('alt', ' ');
       var img = document.createElement("img");
-      img.setAttribute('src', '../static/deletar.png');
+      img.setAttribute('src', '../static/img/deletar.png');
       img.setAttribute('onclick', 'apagar("'+id[0]+'.'+ordem+'")');
       elemento.appendChild(img);
     } else{
@@ -36,7 +36,7 @@ function allowDrop(ev) {
     }
 }
 
-var contador = 10;
+var contador = 6;
 function NovaDiv() {
     var area = document.getElementById("areaBlocos").innerHTML;
     var novaArea = area + '<div class="dropin" id="NovaDiv'+contador+'" ondrop="drop(event, '+contador+')" ondragover="allowDrop(event)"></div>';
