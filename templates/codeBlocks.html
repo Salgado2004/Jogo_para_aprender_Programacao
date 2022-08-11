@@ -1,6 +1,6 @@
 {% block codigos %}
     <h4>Blocos de código</h4>
-     {% if the_nivel > 1 %}
+    {% if the_nivel > 1 %}
     <details id="Variaveis">
         <summary>Variaveis</summary><br>
         <code class="codeblock" id="in"draggable="true" alt="template" ondragstart="drag(event)">
@@ -13,54 +13,54 @@
         <summary>Saídas</summary><br>
         <code class="codeblock" id="out"draggable="true" alt="template" ondragstart="drag(event)">
             <input class="ordem" type="text" name="indice." hidden>
-            &nbsp;print(<input type="text" name="print." >)<br>
+            print(<input type="text" name="print." >)<br>
         </code><br>
     </details>
-    {% if the_nivel > 2 %}
+    {% if the_nivel > 0 %}
     <details id="Condições">
         <summary>Condições</summary><br>
         <code class="codeblock" id="cd.if" draggable="true" alt="template" ondragstart="drag(event)">
             <input class="ordem" type="text" name="indice." hidden>
-            if(<input type="text" name="condicaoIf." >):<br>
+            if(<input type="text" name="if." >):<br>
         </code><br>
         <code class="codeblock" id="cd.else"draggable="true" alt="template" ondragstart="drag(event)">
             <input class="ordem" type="text" name="indice." hidden>
-            <input type="text" name="condicaoElse." value="true" style="display: none;">
+            <input type="text" name="else." value="true" style="display: none;">
             else:<br>
         </code><br>
         <code class="codeblock" id="cd.elif" draggable="true" alt="template" ondragstart="drag(event)">
             <input class="ordem" type="text" name="indice." hidden>
-            elif(<input type="text" name="condicaoElif." >):<br>
+            elif(<input type="text" name="elif." >):<br>
         </code><br>
     </details>
     <details id="Repetições">
         <summary>Repetições</summary><br>
         <code class="codeblock" id="loop.while" draggable="true" alt="template" ondragstart="drag(event)">
             <input class="ordem" type="text" name="indice." hidden>
-            while(<input type="text" name="loopWhile." >):<br>
+            while  <input type="text" name="while." >:<br>
         </code><br>
         <code class="codeblock" id="loop.for" draggable="true" alt="template" ondragstart="drag(event)">
             <input class="ordem" type="text" name="indice." hidden>
-            for(<input type="text" name="loopFor." >):<br>
+            for  <input type="text" name="for." >:<br>
         </code><br>
     </details>
     <details id="Coleções">
         <summary>Coleções</summary><br>
         <code class="codeblock" id="array.list" draggable="true" alt="template" ondragstart="drag(event)">
             <input class="ordem" type="text" name="indice." hidden>
-            lista = [<input type="text" name="arrayList." >]<br>
+            lista = [<input type="text" name="list." >]<br>
         </code><br>
         <code class="codeblock" id="array.tuple" draggable="true" alt="template" ondragstart="drag(event)">
             <input class="ordem" type="text" name="indice." hidden>
-            tupla = (<input type="text" name="arrayTuple." >)<br>
+            tupla = (<input type="text" name="tuple." >)<br>
         </code><br>
         <code class="codeblock" id="array.set" draggable="true" alt="template" ondragstart="drag(event)">
             <input class="ordem" type="text" name="indice." hidden>
-            conjunto = {<input type="text" name="arraySet." >}<br>
+            conjunto = {<input type="text" name="set." >}<br>
         </code><br>
         <code class="codeblock" id="array.dictionary" draggable="true" alt="template" ondragstart="drag(event)">
             <input class="ordem" type="text" name="indice." hidden>
-            dicionario = {<input type="text" name="arrayDictionary." value="'Chave': ">}<br>
+            dicionario = {<input type="text" name="dictionary." value="'Chave': ">}<br>
         </code><br>
     </details>
     <details id="Funções">
