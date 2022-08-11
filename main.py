@@ -2,6 +2,7 @@
 
 import numpy as np
 import conexoesBD as bd
+import verificaMissao as vm
 from flask import Flask, render_template, request, session, redirect, url_for
 
 app = Flask(__name__)
@@ -12,7 +13,7 @@ app.secret_key = 'ofjoedjwoedmowid'
 def verifica() -> 'html':
     missao = int(request.form['missao'])
     ordem = [ ]
-    codeblocks = ['var.', 'print.', 'condicaoIf.', 'condicaoElse.', 'condicaoElif.', 'loopWhile.', 'loopFor.', 'arrayList.', 'arrayTuple.', 'arraySet.', 'arrayDictionary.', 'funName.', 'funCall.']
+    codeblocks = ['var.', 'print.', 'if.', 'else.', 'elif.', 'while.', 'for.', 'list.', 'tuple.', 'set.', 'dictionary.', 'funName.', 'funCall.']
     for i in range(15):
         for code in codeblocks:
             chave = code+str(i)
@@ -25,6 +26,7 @@ def verifica() -> 'html':
     codigo = vm.criaCodigo(ordem)
     return codigo
 
+
 @app.errorhandler(404)
 def erro404(error):
     return render_template('GerenciadorErro.html',
@@ -32,13 +34,13 @@ def erro404(error):
                             the_erro = "404"), 404
 
 @app.errorhandler(400)
-def erro404(error):
+def erro400(error):
     return render_template('GerenciadorErro.html',
                             the_msg = "Opa! Parece que falta alguma coisa no seu código :/",
                             the_erro = "400"), 400
 
 @app.errorhandler(405)
-def erro404(error):
+def erro405(error):
     return render_template('GerenciadorErro.html',
                             the_msg = "Opa! O método utilizado para acessar essa página não é válido :/",
                             the_erro = "405"), 405
@@ -74,14 +76,11 @@ def login() -> 'html':
     (session['username']) = nome
     return home_page()
 
-#@app.route('/missao1')
-#def mission1_page() -> 'html':
-#    return render_template('teste2.html')
-
 @app.route('/missoes', methods=['POST'])
 def get_missao() -> 'html':
     missao =  (session['nivel'])
     pagMissao = "missao"+missao+".html"
+#    exec(open("codigoMissao1.py").read())
     return render_template(pagMissao, 
                             the_nivel = int(missao))
 
